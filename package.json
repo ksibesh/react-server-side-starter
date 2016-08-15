@@ -10,7 +10,7 @@
   },
   "betterScripts": {
     "start-dev": {
-      "command": "webpack --progress && node src/server/index.js",
+      "command": "webpack --progress && nodemon --exec babel-node src/server/index.js",
       "env": {
         "PORT": 8084,
         "NODE_ENV": "development"
@@ -28,6 +28,7 @@
   },
   "homepage": "https://github.com/ksibesh/react-server-side-starter#readme",
   "devDependencies": {
+    "babel-cli": "^6.11.4",
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",
     "babel-plugin-add-module-exports": "^0.2.1",
@@ -38,6 +39,7 @@
     "babel-preset-react": "^6.11.1",
     "babel-preset-stage-0": "^6.5.0",
     "better-npm-run": "0.0.10",
+    "nodemon": "^1.10.0",
     "webpack": "^1.13.1"
   },
   "dependencies": {
