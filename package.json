@@ -12,7 +12,8 @@
     "start-dev": {
       "command": "webpack --progress && node src/server/index.js",
       "env": {
-        "PORT": 8084
+        "PORT": 8084,
+        "NODE_ENV": "development"
       }
     }
   },
@@ -29,8 +30,13 @@
   "devDependencies": {
     "babel-core": "^6.13.2",
     "babel-loader": "^6.2.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-react-display-name": "^6.8.0",
+    "babel-plugin-transform-runtime": "^6.12.0",
     "babel-preset-es2015": "^6.13.2",
     "babel-preset-react": "^6.11.1",
+    "babel-preset-stage-0": "^6.5.0",
     "better-npm-run": "0.0.10",
     "webpack": "^1.13.1"
   },
