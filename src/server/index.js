@@ -6,26 +6,25 @@ import favicon from 'serve-favicon';
 
 import React from 'react';
 import ReactDOM from 'react-dom/server';
-import {createStore} from 'redux';
 import createHistory from 'react-router/lib/createMemoryHistory';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { match, RouterContext, Router } from 'react-router';
 import {Provider} from 'react-redux';
 import getRoute from '../route';
+import createStore from '../base/create-store';
 
 var app = express();
 app.use(favicon(path.join(__dirname, '../..', 'public', 'assets', 'favicon.ico')));
 app.use(express.static(path.join(__dirname, "..", "..", "public")));
 
+// server side rendering logic
 app.use(function(req, res) {
   var memoryHistory = createHistory(req.orignalUrl);
-  // TODO: create reducers and pass that reducer as argument to function
-  var store = createStore(() => {});
-  // TODO: find a way to sync history with store
-  // var history = syncHistoryWithStore(memoryHistory, store);
+  var store = createStore();
+  var history = syncHistoryWithStore(memoryHistory, store);
 
-  match({history:memoryHistory, routes:getRoute(), location:req.url}, (error, redirectionLocation, renderProps) => {
-
+  match({history, routes:getRoute(), location:req.url}, (error, redirectionLocation, renderProps) => {
+    // TODO: handle faliure logic and redirection path
     res.end(ReactDOM.renderToString(
       <html>
         <head></head>

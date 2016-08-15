@@ -26,17 +26,4 @@ module.exports = [{
       });
     }
   ]
-},{
-  name: "server",
-  entry: "./src/server.js",
-  devtool: "source-map",
-  target: "node",
-  output: {
-    path: assetPath,
-    filename: "../src/server/page.generated.js",
-    libraryTarget: "commonjs2",
-  },
-  module: {
-    loaders: loaders,
-  }
 }];
