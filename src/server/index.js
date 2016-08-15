@@ -25,6 +25,7 @@ app.use(function(req, res) {
 
   match({history, routes:getRoute(), location:req.url}, (error, redirectionLocation, renderProps) => {
     // TODO: handle faliure logic and redirection path
+    console.log(req.url + " link served via server");
     res.end(ReactDOM.renderToString(
       <html>
         <head></head>
