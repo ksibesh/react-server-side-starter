@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/server';
 
-module.exports = function(req, scriptFileName) {
+const serverRendering = (req, scriptFileName) => {
   console.log('response sent from server');
 
   return ReactDOM.renderToString(
@@ -16,3 +16,5 @@ module.exports = function(req, scriptFileName) {
     </html>
   );
 }
+
+export default serverRendering;
