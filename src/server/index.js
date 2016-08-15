@@ -1,7 +1,7 @@
 import express from 'express';
-var path = require('path');
-var page = require('./page.generated');
-var stats = require('./stats.generated.json');
+import path from 'path';
+import page from './page.generated';
+import stats from './stats.generated.json';
 
 var app = express();
 app.use(express.static(path.join(__dirname, "..", "..", "public")));
