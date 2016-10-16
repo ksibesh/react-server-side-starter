@@ -1,6 +1,6 @@
 import express from 'express';
 import path from 'path';
-import page from './page.generated';
+// import page from './page.generated';
 import stats from './stats.generated.json';
 import favicon from 'serve-favicon';
 

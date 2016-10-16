@@ -4,3 +4,5 @@ node_modules/
 **/page.generated.js
 **/page.generated.js.map
 **/stats.generated.json
+npm-debug.log
+yarn.lock
